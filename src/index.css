@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #EEF0EA;
+  --color-ink: #16213A;
+  --color-tank: #D3202F;
+  --color-tank-dark: #A8141F;
+  --color-chrome: #C9CED6;
+  --color-moss: #2F6F4F;
+  --font-display: 'Arial Narrow', 'Franklin Gothic Medium', 'Roboto Condensed', system-ui, sans-serif;
+}
+
+html, body, #root { min-height: 100%; }
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+.display { font-family: var(--font-display); font-stretch: condensed; letter-spacing: -0.01em; }
+.field {
+  width: 100%; border: 1px solid color-mix(in srgb, var(--color-ink) 25%, transparent);
+  background: #fff; padding: .6rem .75rem; font-size: .95rem;
+}
+.field:focus-visible, button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--color-tank); outline-offset: 2px;
+}
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .4rem; padding: .6rem 1rem; font-weight: 600; font-size: .9rem; cursor: pointer; border: 1px solid transparent; }
+.btn-primary { background: var(--color-tank); color: #fff; }
+.btn-primary:hover { background: var(--color-tank-dark); }
+.btn-ghost { background: #fff; border-color: color-mix(in srgb, var(--color-ink) 25%, transparent); }
+.btn-ghost:hover { background: var(--color-chrome); }
+.btn-danger { background: #fff; color: var(--color-tank-dark); border-color: var(--color-tank); }
+.btn-danger:hover { background: var(--color-tank); color: #fff; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
